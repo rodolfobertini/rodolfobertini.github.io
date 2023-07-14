@@ -1,6 +1,6 @@
 html,body {
     height: 100%;
-    background-color: radial-gradient(circle, #CAB0C0, #F0CAD0, #120783);
+    background-color: #d49166
   }
   
   body{
@@ -37,11 +37,11 @@ html,body {
   }
   
   a{
-    background-color: white;
+    background-color: #f2f1df;
     padding: 13px;
     border-radius: 5px;
     text-decoration: none;
-    color: black;
+    color: #4b271c;
   }
   
   a:hover{
