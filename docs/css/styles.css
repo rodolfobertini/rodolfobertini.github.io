@@ -38,12 +38,12 @@ html,body {
   }
   
   a{
-    background-color: #767672a9;
-    box-shadow: 5px 5px 5px rgb(205, 67, 12);
+    background-color: rgb(189, 152, 100);
+    box-shadow: 5px 5px 5px rgb(247, 92, 31);
     padding: 13px;
     border-radius: 9px;
     text-decoration: none;
-    color: #120783;
+    color: #120783aa
   }
   
   a:hover{
