@@ -1,6 +1,6 @@
 html,body {
     height: 100%;
-    background-color: #120783;
+    background-color: radial-gradient(circle, #CAB0C0, #F0CAD0, #120783);
   }
   
   body{
