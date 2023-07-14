@@ -38,11 +38,11 @@ html,body {
   
   a{
     background-color: #f2f1df;
-    box-shadow: 5px 5px 5px rgb(213, 155, 30);
+    box-shadow: 5px 5px 5px rgb(205, 67, 12);
     padding: 13px;
     border-radius: 9px;
     text-decoration: none;
-    color: #4b271c;
+    color: #120783;
   }
   
   a:hover{
