@@ -1,6 +1,6 @@
 html,body {
     height: 100%;
-    background: linear-gradient(60deg, #abecd6 0%,#fbed96 100%);
+    background: linear-gradient(60deg, #845EC2, #D65DB1, #FF6F91, #FF9671, #FFC75F, #F9F871);
   }
   
   body{
@@ -19,6 +19,7 @@ html,body {
   h1,h2{
     font-family: "Bebas Neue";
     margin: 0;
+    color: #120783;
   }
   
   .conteiner{
@@ -37,7 +38,7 @@ html,body {
   }
   
   a{
-    background-color: #f2f1df;
+    background-color: #767672a9;
     box-shadow: 5px 5px 5px rgb(205, 67, 12);
     padding: 13px;
     border-radius: 9px;
