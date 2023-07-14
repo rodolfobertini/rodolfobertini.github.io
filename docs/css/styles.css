@@ -1,6 +1,6 @@
 html,body {
     height: 100%;
-    background-color: #d49166
+    background: linear-gradient(60deg, #abecd6 0%,#fbed96 100%);
   }
   
   body{
@@ -39,7 +39,7 @@ html,body {
   a{
     background-color: #f2f1df;
     padding: 13px;
-    border-radius: 5px;
+    border-radius: 9px;
     text-decoration: none;
     color: #4b271c;
   }
