@@ -1,13 +1,68 @@
-div {
-    position: relative;
-    width: 624px;
-    height: 300px;
-    overflow: hidden;
-}
-iframe {
-    position: absolute;            
-    top: -95px;
-    left: -25px;
-    width: 1024px;
-    height: 768px;
-}
+html,body {
+    height: 100%;
+    background-color: #2196f375;
+  }
+  
+  body{
+    margin: 0;
+  }
+  
+  .imagem {
+    border-radius: 100%;
+    width: 25%;
+  }
+  
+  .imagem:hover{
+    animation: breathing 4000ms infinite forwards;
+  }
+  
+  h1,h2{
+    font-family: "Bebas Neue";
+    margin: 0;
+  }
+  
+  .conteiner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    gap: 10px;
+  }
+  
+  .link{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  a{
+    background-color: white;
+    padding: 13px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: black;
+  }
+  
+  a:hover{
+    animation: breathing 4000ms infinite forwards;
+  }
+  
+  
+  @keyframes breathing{
+    0% {
+      transform: scale(98%);
+    }
+    25%{
+      transform: scale(103%);
+    }
+    50% {
+      transform: scale(98%) rotate(360deg);
+    }
+    75% {
+      transform: scale(103%) rotate(360deg);
+    }
+    100% {
+      transform: scale(98%) rotate(360deg);
+    }
+  }
