@@ -16,12 +16,6 @@ html,body {
     animation: breathing 4000ms infinite forwards;
   }
   
-  h1,h2{
-    font-family: "Bebas Neue";
-    margin: 0;
-    color: #120783;
-  }
-  
   .conteiner{
     display: flex;
     flex-direction: column;
@@ -50,7 +44,25 @@ html,body {
     animation: breathing 4000ms infinite forwards;
   }
   
-  
+  h1,h2 {
+    font-family: "Bebas Neue";
+    margin: 0;
+    background: linear-gradient(
+        to right,
+        #7953cd 20%,
+        #00affa 30%,
+        #0190cd 70%,
+        #764ada 80%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+    background-size: 500% auto;
+    animation: textShine 5s ease-in-out infinite alternate;
+}
+
+
   @keyframes breathing{
     0% {
       transform: scale(98%);
@@ -68,3 +80,12 @@ html,body {
       transform: scale(98%) rotate(360deg);
     }
   }
+
+  @keyframes textShine {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
