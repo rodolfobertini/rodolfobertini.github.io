@@ -45,6 +45,8 @@ html,body {
   }
   
   h1,h2 {
+    font-family: "Bebas Neue";
+    margin: 0;
     background: linear-gradient(
         to right,
         #7953cd 20%,
