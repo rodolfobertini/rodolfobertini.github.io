@@ -5,6 +5,15 @@
 </head>
 <body><!-- Start of iFood Widget script-->
 <script async src="https://widgets.ifood.com.br/widget.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+    $(function() {
+      // Incorporar a página da web no elemento com o id `iframe`
+      var iframe = $('<iframe src="https://grafana.dnaservico.com.br/"></iframe>');
+      $('#iframe').html(iframe);
+    });
+  </script>
+	<div id="iframe"  width="90%" height="90%"></div>
 <script>
   window.addEventListener('load', () => {
     iFoodWidget.init({
@@ -20,10 +29,5 @@
   });
 </script>
 <!-- End of iFood Widget script -->
-<div>
-  <embed  width="90%" height="90%" src="https://grafana.dnaservico.com.br/">
-    Mapa
-  </embed>
-</div>
 </body>
 </html>
