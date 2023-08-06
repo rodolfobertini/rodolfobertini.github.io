@@ -1,29 +1,249 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width" />
-    <link rel="stylesheet" href="./css/styles.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Great+Vibes&display=swap" rel="stylesheet">
-    <title>Rodolfo Bertini</title>
+  <meta charset="UTF-8">
+  <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Profile card component</title>
 </head>
+ <style type="text/css">
+ body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: hsl(185, 75%, 39%);
+      overflow: hidden;
+    }
 
-<body>
-    <div class="conteiner">
-        <img class="imagem" src="./image/perfillinkedin.jpeg" alt="Foto Perfil" />
-        <h1>Rodolfo Bertini Rocha</h1>
-        <h2>Minhas informações de contato</h2>
-        <div class="link">
-            <a href="https://github.com/rodolfobertini" target="_blank" class="">GitHub</a>
-            <a href="https://www.linkedin.com/in/rodolfo-bertini-rocha-b04675153/" target="_blank" class="">Linkedin</a>
-            <a href="https://www.instagram.com/rodolfobr/" target="_blank" class="">Instagram</a>
-        </div>
+a,a:visited,a:hover,a:active,a:link { 
+  text-decoration: none;
+  color: inherit;
+}
+
+/* cores */
+    .namestats { 
+      color: hsl(229, 23%, 23%);
+    }
+    .idade,.cidade,.redes {
+      color: hsl(227, 10%, 46%);
+    }
+    .profiletop {
+      background: hsl(183, 62%, 54%);
+    }
+    .linha { 
+      background: hsl(228, 9%, 92%);
+    }
+
+.profilecard {
+      position: absolute;
+      left: 50%;
+      top:50%;
+      margin-left: -175px;
+      margin-top: -187px;
+      display: flex;
+      justify-content: center;
+      width: 350px;
+      height: 374px;
+      border-radius: 15px;
+      background: #FFFFFF;
+      box-shadow: 0px 50px 100px -20px rgba(8, 70, 94, 0.50);
+      overflow: hidden;
+}
+.profiletop {
+      position: absolute;
+      width: 100%;
+      height: 140px;
+      flex-shrink: 0;
+      border-radius: 15px 15px 0px 0px;
+      background-image: url(images/bg-pattern-card.svg); 
+      background-size: cover; 
+      background-repeat: no-repeat;
+  
+}
+   /** Estilo foto redonda com borda "branca" **/
+.foto {
+    top: 92px;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    z-index: 2;
+    width: 86px;
+    height: 86px;
+    border-radius: 96px;
+    border: 5px solid #FFF;
+    background-image: url(images/perfillinkedin150x150.jpg); 
+    background-size: cover; 
+    background-repeat: no-repeat;
+}
+.foto:hover {
+    animation: giragira 5000ms infinite forwards;
+  }
+.nomidade {
+    top: 212px;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    padding: 0px 0.5px 1px 9px;
+    justify-content: flex-end;
+    align-items: flex-start;
+    gap: 16.5px;
+   }
+
+.namestats {
+  font-family: Kumbh Sans;
+  font-size: 18px;
+  font-weight: 700;
+   }
+
+.idade { 
+  font-family: Kumbh Sans;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+   }
+
+.cidade { 
+  top: 243px;
+  display: flex;
+  justify-content: center;
+  position: absolute;    
+  font-family: Kumbh Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  }
+
+.linha { 
+  top: 285px;
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  flex-shrink: 0;
+  }
+
+.socialblock {
+  display: flex;
+  top: 310px;
+  justify-content: space-evenly;
+  position: absolute;       
+  width: 80%;
+  height: 42px;
+  }
+
+.social { 
+ display: inline-flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ gap: 5px;
+ }
+
+.redes {
+  font-family: Kumbh Sans;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 1.5px;
+   }
+  
+.ovaltop { 
+    position: relative;
+    left: 0;
+    top: 0;    
+    flex-shrink: 0;
+    margin-top: -712px;
+    margin-left: -487px;
+    width: 978px;
+    height: 976px;
+    z-index: -1;
+    background-image: url(images/bg-pattern-top.svg); 
+    background-size: contain; 
+    background-repeat: no-repeat;
+} 
+
+.ovalbottom { 
+      position: relative;
+      right: 0;
+      bottom: 0;
+      flex-shrink: 0;
+      margin-right: -432px;
+      margin-bottom: -853px;
+      width: 978px;
+      height: 976px;
+      z-index: -1;
+      background-image: url(images/bg-pattern-bottom.svg); 
+      background-size: contain; 
+      background-repeat: no-repeat;
+}
+
+@keyframes giragira {
+    0% {
+      transform: scale(90%);
+    }
+    25%{
+      transform: scale(110%);
+    }
+    50% {
+      transform: scale(90%) rotate(360deg);
+    }
+    75% {
+      transform: scale(110%) rotate(360deg);
+    }
+    100% {
+      transform: scale(90%) rotate(360deg);
+    }
+  }
+
+  @media screen and (max-width: 375px) {
+.profilecard {
+      width: 326px;
+      margin-left: -163px;
+  }
+} 
+
+  </style>
+  
+  <body>
+  <!-- write your html structure here -->
+  <div class="ovaltop"></div>
+
+  <div class="profilecard">
+    <div class="profiletop"></div>
+      <div class="foto"></div>
+      <div class="nomidade">
+        <div class="namestats"><a href="http://instagram.com/rodolfobr" target="_blank">Rodolfo Bertini</a></div>
+        <div class="idade">40</div>
     </div>
+    <div class="cidade">Fortaleza</div>
+    <div class="linha"></div>
+    <div class="socialblock">
+      <div class="social">
+        <div class="namestats">116</div>
+        <div class="redes"><a href="https://github.com/rodolfobertini" target="_blank">Github</a></div>
+      </div>
+      <div class="social">
+        <div class="namestats">286</div>
+        <div class="redes"><a href="https://www.freecodecamp.org/RodolfoBertini" target="_blank">FreeCodeCamp</a></div>
+      </div>
+      <div class="social">
+        <div class="namestats">1833</div>
+        <div class="redes"><a href="https://www.duolingo.com/profile/RodolfoBR" target="_blank">Duolingo</a></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ovalbottom"></div>
 
 </body>
-<!-- Obrigado pela ajuda Rafael Jereissate -->
+
 </html>
