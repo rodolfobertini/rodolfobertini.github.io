@@ -231,8 +231,29 @@ cursor: url(./images/github.cur), auto;
 } 
 
   </style>
-  
-  <body>
+<script>
+function idade (ano_aniversario, mes_aniversario, dia_aniversario) {
+  var d = new Date,
+      ano_atual = d.getFullYear(),
+      mes_atual = d.getMonth() + 1,
+      dia_atual = d.getDate(),
+ 
+      ano_aniversario = +ano_aniversario,
+      mes_aniversario = +mes_aniversario,
+      dia_aniversario = +dia_aniversario,
+ 
+      quantos_anos = ano_atual - ano_aniversario;
+ 
+  if (mes_atual < mes_aniversario || mes_atual == mes_aniversario && dia_atual < dia_aniversario) {
+    quantos_anos--;
+  }
+ 
+  return quantos_anos < 0 ? 0 : quantos_anos;
+}
+
+</script>
+
+<body>
   <!-- write your html structure here -->
   <div class="ovaltop"></div>
 
@@ -241,7 +262,11 @@ cursor: url(./images/github.cur), auto;
       <div class="foto"></div>
       <div class="nomidade">
         <div class="namestats"><a class="insta" href="http://instagram.com/rodolfobr" target="_blank">Rodolfo Bertini</a></div>
-        <div class="idade">40</div>
+        <div class="idade" id="idade"></div>
+          <script>
+          var div = document.getElementById("idade");
+          div.innerHTML = idade(1983,7,12);
+          </script>
     </div>
     <div class="cidade">Fortaleza</div>
     <div class="linha"></div>
