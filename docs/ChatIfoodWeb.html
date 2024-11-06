@@ -1,16 +1,17 @@
+<!DOCTYPE html>
 <html>
 <head>
-  <title>Chat iFood - Grupo Azilados</title>
+  <title>Configurar iFood Widget</title>
 </head>
 <body>
   <h1>Configurar iFood Widget</h1>
-  <label for="storeCount">Número de Lojas:</label>
-  <input type="number" id="storeCount" min="1" max="10" value="1">
-  <div id="merchantInputs"></div>
-  <button id="initializeWidget">Inicializar Widget</button>
+  <form id="configForm" action="initialize.html" method="get">
+    <label for="storeCount">Número de Lojas:</label>
+    <input type="number" id="storeCount" name="storeCount" min="1" max="10" value="1">
+    <div id="merchantInputs"></div>
+    <button type="submit">Ir para Inicialização</button>
+  </form>
 
-  <!-- Start of iFood Widget script-->
-  <script async src="https://widgets.ifood.com.br/widget.js"></script>
   <script>
     document.getElementById('storeCount').addEventListener('input', function() {
       const storeCount = parseInt(this.value, 10);
@@ -20,42 +21,15 @@
       for (let i = 0; i < storeCount; i++) {
         const input = document.createElement('input');
         input.type = 'text';
+        input.name = `merchantId${i}`;
         input.placeholder = `Merchant ID ${i + 1}`;
-        input.id = `merchantId${i}`;
         merchantInputs.appendChild(input);
         merchantInputs.appendChild(document.createElement('br'));
       }
     });
 
-    document.getElementById('initializeWidget').addEventListener('click', function() {
-      const storeCount = parseInt(document.getElementById('storeCount').value, 10);
-      const merchantIds = [];
-
-      for (let i = 0; i < storeCount; i++) {
-        const merchantId = document.getElementById(`merchantId${i}`).value.trim();
-        if (merchantId) {
-          merchantIds.push(merchantId);
-        }
-      }
-
-      if (merchantIds.length > 0) {
-        console.log('Inicializando widget com os seguintes Merchant IDs:', merchantIds);
-        
-        if (typeof iFoodWidget !== 'undefined' && typeof iFoodWidget.init === 'function') {
-          iFoodWidget.init({
-            widgetId: '5c61ae8b-74ea-4b30-a42b-14c251e6c0d4',
-            merchantIds: merchantIds,
-          });
-          alert('Widget inicializado com sucesso!');
-        } else {
-          console.error('Erro: iFoodWidget não está definido ou não é uma função.');
-          alert('Erro ao inicializar o widget. Verifique se o script do widget foi carregado corretamente.');
-        }
-      } else {
-        alert('Por favor, insira pelo menos um Merchant ID.');
-      }
-    });
+    // Trigger the input event to generate initial inputs
+    document.getElementById('storeCount').dispatchEvent(new Event('input'));
   </script>
-  <!-- End of iFood Widget script -->
 </body>
 </html>
