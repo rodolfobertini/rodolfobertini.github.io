@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Inicializar iFood Widget</title>
+</head>
+<body>
+  <h1>Inicializando iFood Widget</h1>
+
+  <!-- Start of iFood Widget script-->
+  <script async src="https://widgets.ifood.com.br/widget.js"></script>
+  <script>
+    window.addEventListener('load', function() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const storeCount = parseInt(urlParams.get('storeCount'), 10);
+      const merchantIds = [];
+
+      for (let i = 0; i < storeCount; i++) {
+        const merchantId = urlParams.get(`merchantId${i}`);
+        if (merchantId) {
+          merchantIds.push(merchantId);
+        }
+      }
+
+      if (merchantIds.length > 0) {
+        console.log('Inicializando widget com os seguintes Merchant IDs:', merchantIds);
+
+        if (typeof iFoodWidget !== 'undefined' && typeof iFoodWidget.init === 'function') {
+          iFoodWidget.init({
+            widgetId: '5c61ae8b-74ea-4b30-a42b-14c251e6c0d4',
+            merchantIds: merchantIds,
+          });
+          alert('Widget inicializado com sucesso!');
+        } else {
+          console.error('Erro: iFoodWidget não está definido ou não é uma função.');
+          alert('Erro ao inicializar o widget. Verifique se o script do widget foi carregado corretamente.');
+        }
+      } else {
+        alert('Nenhum Merchant ID foi fornecido.');
+      }
+    });
+  </script>
+  <!-- End of iFood Widget script -->
+</body>
+</html>
